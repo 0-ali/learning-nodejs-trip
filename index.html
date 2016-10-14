@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Learning-nodejs by xc0d3rz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Learning-nodejs</h1>
+      <h2 class="project-tagline">رحلة تعلم نود.جي إس</h2>
+      <a href="https://github.com/xc0d3rz/learning-nodejs" class="btn">View on GitHub</a>
+      <a href="https://github.com/xc0d3rz/learning-nodejs/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/xc0d3rz/learning-nodejs/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="رحلتي-في-تعلم-نودجي-إس" class="anchor" href="#%D8%B1%D8%AD%D9%84%D8%AA%D9%8A-%D9%81%D9%8A-%D8%AA%D8%B9%D9%84%D9%85-%D9%86%D9%88%D8%AF%D8%AC%D9%8A-%D8%A5%D8%B3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>رحلتي في تعلم نود.جي إس</h1>
+
+<p>هنا، اشارك معكم تجاربي والمشاكل التى واجهتها إثناء تعلم نود.جي إس وكيف قمت بحلها.</p>
+
+<h3>
+<a id="تنبيه" class="anchor" href="#%D8%AA%D9%86%D8%A8%D9%8A%D9%87" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>تنبيه</h3>
+
+<p><strong>14/10/2016</strong>
+هو تاريخ بداية رحلة التعلم إي اليوم (حتى هذه اللحظة)، أحببت مشاركة رحلتي حتى نصل معاً لمرحلة كافية لمتطلبات كل منا.
+أظن أن الدورة و ما تحتويه مناسبة لمن لديه خبرة/معرفة جيدة بالجافاسكربت.</p>
+
+<h2>
+<a id="المقدمة" class="anchor" href="#%D8%A7%D9%84%D9%85%D9%82%D8%AF%D9%85%D8%A9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>المقدمة:</h2>
+
+<p><strong><a href="https://www.facebook.com/permalink.php?story_fbid=696465820504236&amp;id=100004224723488&amp;width=500#">المصدر</a></strong></p>
+
+<p>Node.js هيا حاجة كدا بتتكب بيها تطبيقات الويب زيها زى ال PHP بيبقا تعاملها مع السيرفر 
+اتعملت Node.js على ايد واحد برنس كدا اسمه ( ريان دال ) في عام 2009، وقامت برعاية نموها شركة Joyent
+اتعملت من تلات لغات C / c++ / java-script
+اتبنت على حاجة اسمها V8 وهوا Google Chrome JavaScript Engine 
+والنود بتتكتب بلغة الجافا سكربت معنى كدا لو بتعرف جافاسكربت يبقا هاتعرف نود :D </p>
+
+<ul>
+<li>طب ايه مميزات النود واللى تخلينى اتعلم حاجة زى دى 
+سرعة الآداء فسرعتها في إرسال الرسائل البريدية هي 10 أضعاف سرعة بي إتش بي :D
+سرعة النود هي نتيجة لسرعة المحرك الى بتشتغل عليه اللى هوا يعتبر نواتها اللى قولنا عليه فوق اللى هيا V8 واكيد فيه مميزات تانية بس تعالى ناخد مثال سريع كدا ازاى بنشغل النود عندنا على الجهاز اول حاجة بنعملها بنروح نعمل ليها داونلود من هنا :
+<a href="https://nodejs.org/">https://nodejs.org/</a>
+والتسطيب عادى جدا زيه زى اى برنامج وبعد كدا بنروح نعمل اى ملف الصيغة بتاعه .js
+وليكن مثلا first.js
+بعد كدا نكتب الكود الجميل دا</li>
+</ul>
+
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-k">var</span> http <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>http<span class="pl-pds">'</span></span>);
+
+<span class="pl-smi">http</span>.<span class="pl-en">createServer</span>(<span class="pl-k">function</span> (<span class="pl-smi">request</span>, <span class="pl-smi">response</span>) {
+    <span class="pl-smi">response</span>.<span class="pl-en">writeHead</span>(<span class="pl-c1">200</span>, {<span class="pl-s"><span class="pl-pds">'</span>Content-Type<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text/plain<span class="pl-pds">'</span></span>});
+    <span class="pl-smi">response</span>.<span class="pl-en">end</span>(<span class="pl-s"><span class="pl-pds">'</span>Hello World<span class="pl-cce">\n</span><span class="pl-pds">'</span></span>);
+}).<span class="pl-en">listen</span>(<span class="pl-c1">8000</span>);
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Server running at http://localhost:8000/<span class="pl-pds">'</span></span>);</pre></div>
+
+<p>وبعد كدا نفتح ال CMD اللى هوا الشاشة السوداء بتاعت الهكيرة اللى بتخوف دى :D 
+وبعد كدا نروح للمكان اللى فيه الملف ونكتب 
+node first.js
+ونقول مبروك كدا عملنا اول ابلكيشن صغير بالنود وقدرنا نعمل سيرفر صغنون كدا :D 
+وممكن اقدر افتحه من البراوزر عادى جدا من خلال انى اكتب فوق ف url
+http://localhost:8000</p>
+
+<hr>
+
+<p>تعالى بقا نفهم الكود واحدة واحدة كدا مع بعضينا 
+اول حاجة عملت متغير اسمها http وخليها بيساوى require("http") يعنى ايه الكلام دا بقا يعنى بكل بساطة كدا انا عملت استدعاء لموديول ( ملف كدا بيبقا فيها فانكشنز كتير ) عشان اقدر استخدم الفانكشنز اللى جواه ومن اهم الفانكشنز دى حاجة اسمها createServer اللى من خلالها بقدر اعمل سيرفر عشان نشتغل بيه </p>
+
+<h2>
+<a id="الدورة" class="anchor" href="#%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>الدورة:</h2>
+
+<h5>
+<a id="مقدم-الدورة" class="anchor" href="#%D9%85%D9%82%D8%AF%D9%85-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>مقدم الدورة:</h5>
+
+<p>حسين الربيعي من قناة <a href="https://www.youtube.com/user/alxs1aa/videos">TheNewBaghdad بغداد الجديدة</a>.</p>
+
+<h5>
+<a id="الدورة-بشكل-عام" class="anchor" href="#%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A9-%D8%A8%D8%B4%D9%83%D9%84-%D8%B9%D8%A7%D9%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>الدورة بشكل عام:</h5>
+
+<p>الدورة اسمها Node.js for beginners وهي باللغة العربية لمن يعانون مشاكل مع الإنجليزية (مثلي). 
+وهي عبارة عن دروس تشرح عن تقنية
+nodejs
+بشكل مفصل وبسيط جدا. فهي للمبتدئنين في تعلم هذه التقنية
+لماذا نود ؟
+اذا كنت تريد ان تبني تطبيق يمتاز بسرعة عالية في التعامل مع المستخدمين مثل برامج المحادثة و التواصل الإجتماعي.</p>
+
+<p><strong><a href="https://www.youtube.com/playlist?list=PLF8OvnCBlEY1ovRLRqitSwBUzWYkggD2D">رابط الدورة</a></strong> اتمنى لكم رحلة موفقة في تعلمها.</p>
+
+<h2>
+<a id="نصائح" class="anchor" href="#%D9%86%D8%B5%D8%A7%D8%A6%D8%AD" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>نصائح:</h2>
+
+<ul>
+<li>انصح بأستخدام محرر/IDE يدعم الاكمال التلقائي لـ node.js، اعتقد أن هذا سوف يساعد في التعلم.اقترح عليك محرر/IDE 
+<a href="https://www.jetbrains.com/webstorm/">WebStorm</a>
+</li>
+<li>انصح إثناء التعلم: محاولة دمج الامثلة مع بعضها البعض وعدم الاكتفاء بمثال واحد والبحث عن مزيد من الامثلة وثم دمجها مع دروس آخرى.</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/xc0d3rz/learning-nodejs">Learning-nodejs</a> is maintained by <a href="https://github.com/xc0d3rz">xc0d3rz</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
